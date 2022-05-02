@@ -1,38 +1,65 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+margin: 0 auto;
+width:80%;
+font-family: 'Hepta Slab', serif;
+background-color: #EBEBD3
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.all-news{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.news{
+    max-width: 500px;
+    padding: 40px;
+    border: 1px solid black;
+    box-shadow: 1px 1px 1px 1px #000000;
+    border-radius:5px
 }
 
-.App-link {
-  color: #61dafb;
+.news-title{
+    padding-bottom:10px ;
+    border-bottom: 1px solid black
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.news-description{
+    padding-top:10px ;
+    line-height: 24px;
+    font-size: 16px;
+    padding-bottom:10px
 }
+
+.news-author{
+    margin-right: 10px;
+    color: rgb(137, 61, 7);
+}
+
+.new-published{
+    margin-right: 10px;
+}
+
+.heading{
+    margin: 20px 0 20px 0;
+    text-align: center;
+    font-size: 50px;
+}
+
+.news-info{
+    /* margin: 2000px;
+     */
+     /* border: 1px solid black
+      */
+      display:inline-block;
+    margin-top: 20px;
+    color: rgb(17, 45, 172);
+}
+

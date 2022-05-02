@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import NewsProvider from "./components/NewsProvider";
+import axios from "axios";
+import News from "./components/News";
+import "./App.css";
+export default function App() {
+  const [data, setData] = useState([]);
 
-function App() {
+  async function callApi() {
+    let url =
+      "https://newsapi.org/v2/everything?q=tesla&from=2022-04-02&sortBy=publishedAt&apiKey=4e04063722cb42fd90c9659bcc0be9ac";
+    await axios.get(url).then((response) => setData(response));
+  }
+  useEffect(() => {
+    callApi();
+  }, []);
+  // console.log(data);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NewsProvider.Provider value={data}>
+        <News />
+      </NewsProvider.Provider>
+    </>
   );
 }
-
-export default App;
